@@ -6,7 +6,7 @@ module.exports = function(app) {
   //首页
   app.get('/', Index.index);
 
-  //走进车协
+  //走进中赣设计
   app.get('/company_intro', Index.company_intro);
   app.get('/culture', Index.culture);
   app.get('/organize', Index.organize);

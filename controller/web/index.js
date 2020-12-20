@@ -15,7 +15,7 @@ var Moment = require('moment');
 exports.index = function(req, res) {
     res.render('website/index/index');
 };
-// 走进车协
+// 走进中赣
 exports.company_intro = function(req, res) {
     res.render('website/company/company_intro');
 };
