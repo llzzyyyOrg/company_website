@@ -17,10 +17,8 @@ module.exports = function(app) {
   app.get('/media_report', Index.media_report);
   app.get('/activity_report', Index.activity_report);
 
-  //服务中心
-  app.get('/services1', Index.services1);
-  app.get('/services2', Index.services2);
-  app.get('/services3', Index.services3);
+  //经典案例
+  app.get('/classic_case', Index.classic_case);
 
   //合作伙伴
   app.get('/partner', Index.partner);

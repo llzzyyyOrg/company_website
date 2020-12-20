@@ -38,15 +38,9 @@ exports.media_report = function(req, res) {
 exports.activity_report = function(req, res) {
     res.render('website/news/activity_report');
 };
-// 服务中心
-exports.services1 = function(req, res) {
-    res.render('website/services/services1');
-};
-exports.services2 = function(req, res) {
-    res.render('website/services/services2');
-};
-exports.services3 = function(req, res) {
-    res.render('website/services/services3');
+// 经典案例
+exports.classic_case = function(req, res) {
+    res.render('website/classic_case/classic_case');
 };
 
 //合作伙伴
