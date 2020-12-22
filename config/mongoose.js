@@ -11,5 +11,6 @@ module.exports=function(){
     require('../model/recruit.js');
     require('../model/quit.js');
     require('../model/feedback.js');
+    require('../model/case.js');
     return db;
 }
