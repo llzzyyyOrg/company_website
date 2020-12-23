@@ -20,6 +20,15 @@ module.exports = function(app) {
   //删除新闻
   app.post('/admin/news_del', Admin.del_one);
 
+  //添加案例
+  app.post('/admin/add_case', Admin.add_case);
+  //分页获取案例
+  app.post('/admin/get_case', Admin.get_case);
+  //查看案例详情
+  app.post('/admin/case_detail', Admin.get_case_detail);
+  //删除案例
+  app.post('/admin/case_del', Admin.del_case);
+
   //添加招聘
   app.post('/admin/add_recruit', Admin.add_recruit);
   //获取招聘信息

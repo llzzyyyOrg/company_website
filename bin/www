@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('cheyou:server');
+var debug = require('debug')('zgsj:server');
 var http = require('http');
 
 /**

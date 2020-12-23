@@ -27,7 +27,6 @@ module.exports = function(app) {
   app.get('/recruit', Index.recruit);
   app.get('/benefits', Index.benefits);
   app.get('/staff_style', Index.staff_style);
-  app.get('/quit_notice', Index.quit_notice);
 
   //联系我们
   app.get('/contact_us', Index.contact_us);

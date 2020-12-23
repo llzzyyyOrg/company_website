@@ -25,6 +25,19 @@ var navs = [{
 		"href": "add_news.html"
 	}]
 }, {
+	"title": "产品中心",
+	"icon": "fa-cogs",
+	"spread": true,
+	"children": [{
+		"title": "经典案例",
+		"icon": "fa-table",
+		"href": "case_list.html"
+	}, {
+		"title": "添加案例",
+		"icon": "fa-navicon",
+		"href": "add_case.html"
+	}]
+}, {
 	"title": "人力资源",
 	"icon": "&#x1002;",
 	"spread": true,
