@@ -29,6 +29,7 @@ module.exports = function(app) {
   app.post('/admin/case_detail', Admin.get_case_detail);
   //ɾ������
   app.post('/admin/case_del', Admin.del_case);
+  app.post('/admin/case_top', Admin.set_case_top);
 
   //������Ƹ
   app.post('/admin/add_recruit', Admin.add_recruit);
