@@ -153,7 +153,7 @@ exports.get_case = function(req, res) {
 // 获取置顶案例
 exports.get_case_top = function(req, res) {
     var query=Case.find({istop:1});
-    query.limit(20);
+    query.limit(10);
     //按照id添加的顺序倒序排列
     query.sort({'_id': -1});
     //计算分页数据
