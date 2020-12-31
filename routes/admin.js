@@ -4,71 +4,72 @@ var Admin = require('../controller/admin/admin');
 
 module.exports = function(app) {
 
-  //Ìø×ªµ½µÇÂ¼Ò³Ãæ
+  //ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Â¼Ò³ï¿½ï¿½
   app.get('/login',Admin.login);
-  //Ìø×ªµ½µÇÂ¼Ò³Ãæ
+  //ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Â¼Ò³ï¿½ï¿½
   app.get('/register',Admin.register);
-  // ºóÌ¨Ê×Ò³
+  // ï¿½ï¿½Ì¨ï¿½ï¿½Ò³
   app.get('/admin', Admin.admin);
 
-  //Ìí¼ÓĞÂÎÅ
+  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   app.post('/admin/add_news', Admin.add_news);
-  //·ÖÒ³»ñÈ¡ĞÂÎÅ
+  //ï¿½ï¿½Ò³ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
   app.post('/admin/get_news', Admin.get_news);
-  //²é¿´ĞÂÎÅÏêÇé
+  //ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   app.post('/admin/news_content', Admin.get_news_detail);
-  //É¾³ıĞÂÎÅ
+  //É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   app.post('/admin/news_del', Admin.del_one);
 
-  //Ìí¼Ó°¸Àı
+  //ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½
   app.post('/admin/add_case', Admin.add_case);
-  //·ÖÒ³»ñÈ¡°¸Àı
+  //ï¿½ï¿½Ò³ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
   app.post('/admin/get_case', Admin.get_case);
-  //²é¿´°¸ÀıÏêÇé
+  app.post('/admin/get_case_top', Admin.get_case_top);
+  //ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   app.post('/admin/case_detail', Admin.get_case_detail);
-  //É¾³ı°¸Àı
+  //É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   app.post('/admin/case_del', Admin.del_case);
 
-  //Ìí¼ÓÕĞÆ¸
+  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¸
   app.post('/admin/add_recruit', Admin.add_recruit);
-  //»ñÈ¡ÕĞÆ¸ĞÅÏ¢
+  //ï¿½ï¿½È¡ï¿½ï¿½Æ¸ï¿½ï¿½Ï¢
   app.post('/admin/get_recruits', Admin.get_recruits);
-  //²é¿´ÕĞÆ¸ÏêÇé
+  //ï¿½é¿´ï¿½ï¿½Æ¸ï¿½ï¿½ï¿½ï¿½
   app.post('/admin/recruit_content', Admin.get_recruit_content);
-  //²é¿´ÕĞÆ¸
+  //ï¿½é¿´ï¿½ï¿½Æ¸
   app.post('/admin/recruit_del', Admin.del_recruit);
 
-  //Ìí¼ÓÀëÖ°¹«Ê¾
+  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö°ï¿½ï¿½Ê¾
   app.post('/admin/add_quit', Admin.add_quit);
-  //·ÖÒ³»ñÈ¡ÀëÖ°¹«Ê¾
+  //ï¿½ï¿½Ò³ï¿½ï¿½È¡ï¿½ï¿½Ö°ï¿½ï¿½Ê¾
   app.post('/admin/get_quits', Admin.get_quits);
-  //É¾³ıÀëÖ°¹«Ê¾
+  //É¾ï¿½ï¿½ï¿½ï¿½Ö°ï¿½ï¿½Ê¾
   app.post('/admin/quit_del', Admin.del_quit);
 
-  //Ìí¼Ó¹ÜÀíÔ±
+  //ï¿½ï¿½ï¿½Ó¹ï¿½ï¿½ï¿½Ô±
   app.post('/admin/post_user', Admin.add_admin);
-  //·ÖÒ³»ñÈ¡¹ÜÀíÔ±
+  //ï¿½ï¿½Ò³ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ô±
   app.post('/admin/get_users', Admin.get_users);
-  //É¾³ı¹ÜÀíÔ±ĞÅÏ¢
+  //É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½Ï¢
   app.post('/admin/user_del', Admin.user_del);
 
-  //Ìá½»µÇÂ¼ĞÅÏ¢£¬ÊµÏÖµÇÂ¼ĞÅÏ¢Ğ£Ñé
+  //ï¿½á½»ï¿½ï¿½Â¼ï¿½ï¿½Ï¢ï¿½ï¿½Êµï¿½Öµï¿½Â¼ï¿½ï¿½Ï¢Ğ£ï¿½ï¿½
   app.post('/login',Admin.checkUser);
-  //Ìá½»×¢²áĞÅÏ¢£¬ÊµÏÖ×¢²áĞ£Ñé
+  //ï¿½á½»×¢ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Êµï¿½ï¿½×¢ï¿½ï¿½Ğ£ï¿½ï¿½
   app.post('/register',Admin.post_register);
-  //ÓÃ»§µÇ³ö²Ù×÷
+  //ï¿½Ã»ï¿½ï¿½Ç³ï¿½ï¿½ï¿½ï¿½ï¿½
   app.get('/logout',Admin.logout);
-  //¸øĞÂ×¢²áµÄÓÃ»§ÊÚÈ¨
+  //ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½È¨
   app.post('/authorize',Admin.authorize);
 
 
 
-  //·ÖÒ³»ñÈ¡ÓÃ»§·´À¡ĞÅÏ¢
+  //ï¿½ï¿½Ò³ï¿½ï¿½È¡ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
   app.post('/admin/get_feedbacks',Admin.get_feedbacks);
-  //·ÖÒ³»ñÈ¡ÓÃ»§·´À¡ĞÅÏ¢
+  //ï¿½ï¿½Ò³ï¿½ï¿½È¡ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
   app.post('/admin/deal_feedbacks',Admin.deal_feedbacks);
 
-  //ºóÌ¨Ö÷Ò³Ğ£ÑéÊÇ·ñÓĞÎ´´¦ÀíµÄ·´À¡ĞÅÏ¢
+  //ï¿½ï¿½Ì¨ï¿½ï¿½Ò³Ğ£ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
   app.get('/admin/check_feedbacks', Admin.check_feedbacks);
 
 

@@ -150,6 +150,23 @@ exports.get_case = function(req, res) {
         }
     });
 };
+// 获取置顶案例
+exports.get_case_top = function(req, res) {
+    //每页大小为10
+    var query=Case.find({istop:0});
+    query.limit(10);
+    //按照id添加的顺序倒序排列
+    query.sort({'_id': -1});
+    //计算分页数据
+    query.exec(function(err,rs){
+        if(err){
+            res.send(err);
+        }else{
+            jsonArray={data:rs};
+            res.json(jsonArray);
+        }
+    });
+};
 //获取案例详情
 exports.get_case_detail = function(req, res) {
 

@@ -19,64 +19,31 @@
 <!--jquery修改首页导航样式-->
 <script>
   $("#classic_case").addClass("active");
-  //   假设获取回来的数据是data
-  var data = [
-    {
-      img: "https://images.unsplash.com/photo-1608268378578-38f26e453d97?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      name: "中交一公局",
-      industry: "建筑",
-      title: "中交一公局：建设智慧工地，打开百亿级市场新空间！",
-      info: "人事办公"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1608268378578-38f26e453d97?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      name: "中交一公局",
-      industry: "建筑",
-      title: "中交一公局：建设智慧工地，打开百亿级市场新空间！",
-      info: "人事办公"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1608268378578-38f26e453d97?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      name: "中交一公局",
-      industry: "建筑",
-      title: "中交一公局：建设智慧工地，打开百亿级市场新空间！",
-      info: "人事办公"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1608268378578-38f26e453d97?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      name: "中交一公局",
-      industry: "建筑",
-      title: "中交一公局：建设智慧工地，打开百亿级市场新空间！",
-      info: "人事办公"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1608268378578-38f26e453d97?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      name: "中交一公局",
-      industry: "建筑",
-      title: "中交一公局：建设智慧工地，打开百亿级市场新空间！",
-      info: "人事办公"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1608268378578-38f26e453d97?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      name: "中交一公局",
-      industry: "建筑",
-      title: "中交一公局：建设智慧工地，打开百亿级市场新空间！",
-      info: "人事办公"
-    }
-  ];
   var content = "";
-  data.forEach(function (item) {
-    content +=
-      '<li class="scene-item">' +
-      '<img class="scene-image" src="' + item.img + '"/>' +
-      '<div class="scene-name">' + item.name + '</div>' +
-      '<div class="scene-description">' +
-      '<div class="scene-industry">' + item.industry + '</div>' +
-      '<div class="scene-title">' + item.title + '</div>' +
-      '<div class="scene-info">' + item.info + '</div>' +
-      "</div>" +
-      "</li>";
-  });
+  //从后台获取数据函数
+  function getData(){
+      $.post("/admin/get_case_top",{istop:1},function(result){
+          var data=result.data;
+          if (!data) {
+              return;
+          }
+          for(var i=0;i<data.length;i++){
+              content +=
+                  '<li class="scene-item">' +
+                    '<img class="scene-image" src="' + "" + '"/>' +
+                    '<div class="scene-name">' + data[i].title + '</div>' +
+                    '<div class="scene-time">' + data[i].time + '</div>' +
+                    '<div class="scene-description">' +
+                    '<div class="scene-title">' + data[i].content + '</div>' +
+                    '</div>' +
+                  '</li>';
+          }
+          $('#scene-wrapper').append(content);
+      });
+  };
 
-  $('#scene-wrapper').append(content);
+  getData();
+
+  //$('#scene-wrapper').append(content);
+           
 </script>
