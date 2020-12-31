@@ -28,7 +28,7 @@
 						<th>序号</th>
 						<th>标题</th>
 						<th>日期</th>
-						<th>置顶</th>
+						<th>是否置顶</th>
 						<th>查看内容</th>
 						<th>操作</th>
 					</tr>
@@ -126,7 +126,7 @@
 			$('#tabContent').on('click', '.layui-btn-top', function() {
 				var obj = $(this);
 				var id = obj.parents('tr').attr('id');
-				var istop = (+(obj.parents('tr').children("td").eq(3).text())) ? 0 : 1
+				var istop = (+((obj.parents('tr').children("td").eq(3).text()) == "是")) ? 0 : 1
 				var strtop = istop ? '置顶' : '取消置顶';
 				layer.confirm('确认要'+strtop+'吗？', {
 					icon: 0,
@@ -160,19 +160,20 @@
 					var mydata=result.data;
 
 					for(var i=0;i<mydata.length;i++){
-						var istop=(+(mydata[i].istop)) ? '取消置顶' : '置顶';
+						var strtop=(+(mydata[i].istop)) ? '是' : '否';
+						var settop=(+(mydata[i].istop)) ? '取消置顶' : '置顶';
 						var tempStr='<tr id='+mydata[i]._id+'>'+
 									/*序号分页后也必须得变动,每页十条数据*/
 								'<td>'+(i+(curr-1)*10+1)+'</td>'+
 								'<td>'+mydata[i].title+'</td>'+
 								'<td>'+mydata[i].time+'</td>'+
-								'<td>'+mydata[i].istop+'</td>'+
+								'<td>'+strtop+'</td>'+
 								'<td>'+
 								'<span class="layui-btn layui-btn-normal layui-btn-mini">查看内容</span>'+
 								'</td>'+
 								'<td>'+
 								'<span class="layui-btn layui-btn-danger layui-btn-mini">删除</span>'+
-								'<span class="layui-btn layui-btn-top layui-btn-mini">'+istop+'</span>'+
+								'<span class="layui-btn layui-btn-top layui-btn-mini">'+settop+'</span>'+
 								'</td>'+
 								'</tr>'
 						tabContent=tabContent+tempStr;
